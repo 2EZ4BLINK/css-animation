@@ -28,7 +28,9 @@ img:hover {
   transform: translateZ(200px);
 }
 
-.button_one {
+.link_one,
+.link_two {
+  text-decoration: none;
   color: #351435;
   font-family: sans-serif;
   font-size: 40px;
@@ -36,11 +38,12 @@ img:hover {
   padding: 20px 40px;
   position: relative;
   cursor: pointer;
-  transition: all 1s;
   overflow: hidden;
+  margin-bottom: 5px;
+  transition: all 1s;
 }
 
-.button_one:before {
+.link_one:before {
   content: "";
   position: absolute;
   top: 0;
@@ -53,10 +56,45 @@ img:hover {
   transition: transform 1s;
 }
 
-.button_one:hover:before {
+.link_one:hover:before {
   transform: translateX(0);
 }
 
-.button_one:hover {
+.link_one:hover {
+  color: white;
+}
+
+.link_two:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  transition: transform 1s;
+  transform: rotateX(90deg);
+  z-index: -1;
+}
+
+.link_two:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262626;
+  transition: transform 1s;
+  transform: rotateY(90deg);
+  z-index: -1;
+}
+
+.link_two:hover:before,
+.link_two:hover:after {
+  transform: rotate(0);
+}
+
+.link_two:hover {
   color: white;
 }
